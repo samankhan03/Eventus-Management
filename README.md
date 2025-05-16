@@ -47,7 +47,7 @@ Note: This project uses Laravel Fortify for authentication, Jetstream for scaffo
 
 1. Clone the repo:
    
-   git clone https://github.com/your-username/Eventus+Management.git
+   git clone https://github.com/samankhan03/Eventus-Management.git
    
 cd Eventus Management
 
