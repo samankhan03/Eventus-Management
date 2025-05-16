@@ -76,7 +76,7 @@ export default {
             })
         },
 
-        // Scroll the chat container to the bottom
+       
         scrollToBottom() {
             let container = document.querySelector("#container");
             container.scrollTop = container.scrollHeight
@@ -90,7 +90,7 @@ export default {
             })
         },
 
-        // Leave the room (decrement active users and post to server)
+        
         leaveRoom() {
             this.$inertia.post(this.route('chat-rooms.logout', this.room.slug));
         },

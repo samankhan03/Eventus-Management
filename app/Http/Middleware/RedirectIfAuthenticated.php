@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class RedirectIfAuthenticated
 {
     /**
-     * Handle an incoming request.
+     * Handles an incoming request.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure  $next

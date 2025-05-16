@@ -39,7 +39,7 @@ class EventCommentController extends Controller
      * @param  \App\Models\Event  $event
      * @return \Illuminate\Http\Response
      */
-    //eventpage comment//
+    //event comments//
     public function store(PostFormRequest $request, Event $event)
     {
         auth()->user()->comments()->create([

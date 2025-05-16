@@ -26,14 +26,14 @@ class Room extends Model
     
 
     /**
-     * Get the messages for the room.
+     * Gets the messages for the room.
      */
     public function messages() {
         return $this->hasMany(Message::class);
     }
 
     /**
-     * Increment the active member count for the room.
+     * Increments the active member count for the room.
      */
     public function incrementActive()
     {
@@ -41,7 +41,7 @@ class Room extends Model
     }
 
     /**
-     * Decrement the active member count for the room.
+     * Decrements the active member count for the room.
      */
     public function decrementActive()
     {

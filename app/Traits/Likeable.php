@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Traits;
-
+// This trait is used to manage likes and dislikes on a model.
 trait Likeable {
 
     public function hasLiked($query) {

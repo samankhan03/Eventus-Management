@@ -9,7 +9,7 @@ use Carbon\Carbon;
 class AppServiceProvider extends ServiceProvider
 {
     /**
-     * Register any application services.
+     * Registers any application services.
      *
      * @return void
      */

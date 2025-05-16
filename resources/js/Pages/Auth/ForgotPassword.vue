@@ -73,7 +73,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between; /* Push content to top and bottom */
-  padding-bottom: 0; /* Remove bottom padding from here */
+  padding-bottom: 0; 
   }
 
 .header-container {
@@ -126,7 +126,7 @@ h1{
   border-radius: 10px;
 }
 
-.forgot-password-button { /* Changed class name here */
+.forgot-password-button { 
   font-size: 15px;
   background-color: black;
   color: white;
@@ -144,7 +144,7 @@ h1{
   font-size: 16px;
 }
 
-/* Style for the input field text and background */
+
 .input-field-dark {
   color: white !important;
   background-color: black !important;
@@ -169,6 +169,6 @@ p{
     font-weight: bold;
     background-color: #d0cbcb;
     padding: 5px 0;
-    margin-top: auto; /* Push footer to the bottom */
+    margin-top: auto; 
 }
 </style>

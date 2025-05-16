@@ -53,11 +53,10 @@ export default {
 
   padding-top: 90px;
   box-sizing: border-box;
-    /* Add these lines to center children */
     display: flex;
-    justify-content: center; /* center horizontally */
-    align-items: center;     /* center vertically */
-    flex-direction: column;  /* stack things vertically inside */
+    justify-content: center;
+    align-items: center;    
+    flex-direction: column;  /* stack title and buttons vertically inside */
     padding-top: 105px
 }
 
@@ -114,7 +113,7 @@ export default {
 
 .button-group {
     display: flex;
-    justify-content: center; /* center horizontally */
+    justify-content: center;
     gap: 50px; /* space between buttons */
 }
 
@@ -122,8 +121,8 @@ export default {
     background-color: rgba(167, 156, 156, 0.751); /* White box with slight transparency */
     padding: 40px;
     border-radius: 20px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Soft shadow */
-    display: inline-block; /* So it hugs the content */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+    display: inline-block;
     text-align: center;
     margin-top: 20px;
 }
@@ -143,7 +142,6 @@ export default {
     color: rgb(0, 0, 0);
     font-weight: bold;
     background-color: #d0cbcb;
-    /* Footer background */
     padding: 5px 0;
 }
 </style>

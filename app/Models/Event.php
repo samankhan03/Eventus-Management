@@ -22,7 +22,7 @@ class Event extends Model
     ];
 
     /**
-     * The relationships that should always be loaded.
+     * The relationships that must always be loaded.
      *
      * @var array
      */

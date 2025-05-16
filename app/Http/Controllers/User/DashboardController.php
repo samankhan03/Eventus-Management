@@ -15,7 +15,7 @@ class DashboardController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    //dashboard for specific user (combined posts/suggestions on homepage)//
+    //Dashboard for specific user (combined posts/suggestions on homepage)//
     public function index(Request $request) {
         $combinedPosts = Post::allPosts()->latest()->paginate(5);
         if ($request->wantsJson()) {

@@ -17,13 +17,13 @@ class EventController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    //show all the upcoming events//
+    //shows all upcoming events//
     public function index(Request $request)
     {
         $events = Event::all();
 
         return Inertia::render(
-            'User/Events/Index',      ///showing all available events
+            'User/Events/Index',      ///shows all available events
             [
                 'events' => $events
             ]
@@ -31,11 +31,11 @@ class EventController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Shows the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    //redirects to create the events page//
+    
     public function create()
     {
         return Inertia::render(
@@ -49,7 +49,7 @@ class EventController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    //creates the events//
+    //stores events//
     public function store(Request $request)
     {
         $rules = [
@@ -75,7 +75,7 @@ class EventController extends Controller
 
         ];
     
-        // If a new image is being uploaded, apply the image validation
+        // applying image validation if a new image is being uploaded
         if ($request->hasFile('image')) {
             $rules['image'] = 'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048';
             $messages['image.image'] = 'The file must be a valid JPG, PNG, JPEG, GIF, or SVG image.';
@@ -113,7 +113,7 @@ class EventController extends Controller
      * @param  \App\Models\Event  $event
      * @return \Illuminate\Http\Response
      */
-    //shows the details of one event/eventattendees//
+    //shows details of an event and the attendees//
     public function show(Event $event)
     {
         $eventId = $event->id;  
@@ -154,7 +154,7 @@ class EventController extends Controller
      * @param  \App\Models\Event  $event
      * @return \Illuminate\Http\Response
      */
-    //after editing the event it will update the event details//
+    //updates the event details//
     public function update(Request $request, Event $event)
     {
         $rules = [
@@ -179,7 +179,7 @@ class EventController extends Controller
             'time_start.check_past_time' => 'The event time cannot be in the past for today\'s date.',
         ];
     
-        // If a new image is being uploaded, apply the image validation
+        // Applying image validation if a new image is being uploaded
         if ($request->hasFile('image')) {
             $rules['image'] = 'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048';
             $messages['image.image'] = 'The file must be a valid JPG, PNG, JPEG, GIF, or SVG image.';
@@ -197,11 +197,11 @@ class EventController extends Controller
         $event->venue = $request->venue;
     
         if ($request->hasFile('image')) {
-            // Delete the old image if it exists
+            // Deletes old image if it exists
             if ($event->image) {
                 Storage::delete('public/' . $event->image);
             }
-            $event->image = $request->file('image')->store('image', 'public'); // Store the new image
+            $event->image = $request->file('image')->store('image', 'public'); 
         }
     
         $event->save();
@@ -218,36 +218,36 @@ class EventController extends Controller
     //
     public function destroy(Event $event): \Illuminate\Http\RedirectResponse
     {
-        // Check if the authenticated user is the owner of the event
+        // Check if the authenticated user is the event owner
         if (auth()->id() !== $event->user_id) {
             return back()->withErrors(['message' => 'You are not authorized to delete this event.']);
         }
 
-        // Delete the associated image if it exists
+        // Deletes the associated image if it exists
         if ($event->image) {
             Storage::delete('public/' . $event->image);
         }
 
-        // Delete the event from the database
+        
         $event->delete();
-        sleep(1); // Optional: Add a small delay for UI feedback
+        sleep(1); 
 
-        // Redirect back to the events index with a success message
+       
         return redirect()->route('events.index')->with('message', 'Event Deleted Successfully');
     }
 
-//reserving a  ticket function is called ///
+//reserving ticket function is called ///
     public function eventAttendees(Request $request, Event $event)
     {
         $event = new EventAttendees();
         $event->title = $request->title;
         $event->event_id = $request->id;
-        $event->user_id = auth()->user()->id;    //we are passing the id of the authorise user for the event attendees
+        $event->user_id = auth()->user()->id;    
         $event->save();
 
         return redirect()->route('events.index')->with('message', 'Event Booked Successfully');
     }
-//reserving/display the ticket for event/
+//reserving/display the tickets for event/
     public function tickets(Request $request)
     {
         $user = auth()->user()->id;

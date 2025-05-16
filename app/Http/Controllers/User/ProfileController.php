@@ -47,7 +47,7 @@ class ProfileController extends Controller
      * @param  \App\Models\User $user
      * @return \Illuminate\Http\Response
      */
-    //display profile,posts,your friends,friends request and friends requests you recieved (homepage)//
+    //display profile, posts, your friends,friend request recieved (homepage)//
     public function show(Request $request, User $user) {
         $posts = Post::where('parent_id', $user->id)
             ->orWhere('user_id', $user->id)

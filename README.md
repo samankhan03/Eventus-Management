@@ -20,7 +20,7 @@ Laravel Framework: 8.83.29
 MAMP Version: 7.2
 PHP Version: 8.3.14
 MySQL Version: 9.3.0 (installed via Homebrew)
-phpMyAdmin Version: 5.2.1 (accessible at http://localhost:8888/phpMyAdmin)
+phpMyAdmin Version: 5.2.1 (accessible at http://localhost:8080/phpMyAdmin)
 
 ⚠️ Note: These exact versions are not strictly required to run the project. As long as your environment meets Laravel’s minimum requirements (PHP ≥ 7.3 and a supported MySQL version), the application should function correctly. Adjust your setup accordingly based on your local development tools.
 
@@ -67,10 +67,10 @@ Ensure the `.env` file exists with the following database setup:
 
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
-DB_PORT=8889
+DB_PORT=3306
 DB_DATABASE=eventus_management
 DB_USERNAME=root
-DB_PASSWORD=root
+DB_PASSWORD=
 
 5. **Run migrations**
 
@@ -88,20 +88,20 @@ php artisan serve
 
 8. **Access the app**
 
-Visit `http://localhost:8000` in your browser.
+Visit `localhost` in your browser.
 
 ## MAMP Setup Notes
-Download MAMP from https://www.mamp.info/
+Download XAMPP OR MAMP 
 
-Start the MySQL server from MAMP.
+Start the MySQL and apache server from XAMPP OR MAMP.
 
-**Access phpMyAdmin 5 at http://localhost:8888/phpMyAdmin5**
+**Access phpMyAdmin at http://localhost:8080/phpMyAdmin**
 
 - Default credentials:
 Username: root
-Password: root
+Password: 
 
-- MySQL port: 8889 (used in .env)
+- MySQL port: 3306 
 
 - Ensure a database named eventus_management exists in phpMyAdmin.
 
@@ -112,6 +112,12 @@ php artisan migrate
 - If the database doesn't already exist, create a new database called 'eventus_management' and then execute the database migrations by running:
 
 php artisan migrate
+
+**Type this command to view MySQL database through terminal**
+
+mysql -h 127.0.0.1 -P 3306 -u root -p
+
+
 
 ## References
 

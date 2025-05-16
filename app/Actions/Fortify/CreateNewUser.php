@@ -15,7 +15,7 @@ class CreateNewUser implements CreatesNewUsers
     use PasswordValidationRules;
 
     /**
-     * Validate and create a newly registered user.
+     * Validate and create new registered user.
      *
      * @param  array  $input
      * @return \App\Models\User
@@ -32,7 +32,7 @@ class CreateNewUser implements CreatesNewUsers
                 'max:100',
                 'unique:users',
                 function ($attribute, $value, $fail) {
-                    // Normalize email to lowercase
+                    // Normalize email to lowercases
                     $value = strtolower($value);
     
                     // Allow emails ending with .ac.uk, .edu, or containing @alumni.

@@ -19,7 +19,7 @@ class CommentLikeController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Shows the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
@@ -29,13 +29,13 @@ class CommentLikeController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Stores a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Comment $comment
      * @return \Illuminate\Http\Response
      */
-    //storing/liking the comment of the user//
+    //stored like comments//
     public function store(Request $request, Comment $comment) {
         return auth()->user()->like($comment);
     }
@@ -80,7 +80,7 @@ class CommentLikeController extends Controller
      * @param  \App\Models\Comment $comment
      * @return \Illuminate\Http\Response
      */
-    //deleting the comments of the user//
+    //delete the comments of the user//
     public function destroy(Comment $comment) {
         return auth()->user()->dislike($comment);
     }

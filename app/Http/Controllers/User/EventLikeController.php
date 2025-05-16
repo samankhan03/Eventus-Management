@@ -34,7 +34,7 @@ class EventLikeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    //liking the event (upcomingeventpage)//
+    //liking an event (upcomingeventpage)//
     public function store(Request $request, Event $event)
     {
         return auth()->user()->like($event);

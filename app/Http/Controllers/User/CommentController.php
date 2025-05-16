@@ -10,7 +10,7 @@ use App\Http\Requests\PostFormRequest;
 class CommentController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Displays a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
@@ -20,7 +20,7 @@ class CommentController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Shows the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
@@ -30,13 +30,13 @@ class CommentController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Stores a newly created resource in storage.
      *
      * @param  \App\Http\Requests\PostFormRequest  $request
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    //commenting on user posts: if the user is avalaible and if the user is also friend with other person you available to store posts/comments//
+    //commenting on user posts: if the user is friends with another user then posts and comments are visible to each other//
     public function store(PostFormRequest $request, Post $post) {
         if((auth()->user()->id != $request->user_id) && (!auth()->user()->is_friends_with($request->user_id))) {
             return back();
@@ -69,7 +69,7 @@ class CommentController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Shows the form for editing the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response

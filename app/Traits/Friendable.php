@@ -5,6 +5,7 @@ namespace App\Traits;
 use App\Models\User;
 use App\Models\Friend;
 
+// This trait is used to manage friend requests and friendships between users.
 trait Friendable {
     public function add_friend($user_requested_id) {
         if($this->id === $user_requested_id) {
@@ -97,6 +98,7 @@ trait Friendable {
         return array_merge($friends, $friends2);
     }
 
+    //
     public function pending_friend_requests() {
 		$users = array();
 		$friendships = Friend::where('status', 0)

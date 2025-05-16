@@ -1,3 +1,4 @@
+//Used mostly for the black button in the application
 <template>
     <button 
         :type="type" 

@@ -10,7 +10,8 @@
                 
                 <span class="text-gray-800 leading-tight text-lg capitalize mt-5 sm:mt-0">
                     Visit your
-                    <inertia-link href="#" class="underline hover:text-green-500">friends</inertia-link>
+<inertia-link :href="route('friends.index')" class="underline hover:text-green-500">friends</inertia-link>
+
                 </span>
             </div>
         </template>

@@ -37,8 +37,8 @@ class PostController extends Controller
      * @param  \App\Http\Requests\PostFormRequest  $request
      * @return \Illuminate\Http\Response
      */
-    //when we are storing post it will check if the user is your friend//
-    //if your friends with them then you can post//
+    //When storing a post it will check if the user is your friend//
+    //If your friends with them then only you can post//
     public function store(PostFormRequest $request) {
         $data = $request->only(['body', 'user_id', 'parent_id']);
         //check if users are friends//
@@ -46,7 +46,7 @@ class PostController extends Controller
             return back()->withErrors(['message' => 'You must be friends first!']);
         }
 
-        //create post if users are friends//
+        //create posts to a specific user only if they are friends//
         if((auth()->user()->id != $data['user_id']) && (auth()->user()->is_friends_with($data['user_id']))) {
             Post::create([
                 'body' => $data['body'],
@@ -105,7 +105,7 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    //you cannot delete their post if they posted and they cant delete your post if you have posted//
+    //you cannot delete other user's posts and they cannot delete your posts //
     public function destroy(Post $post) {
         if((auth()->user()->id != $post->user_id) && (!auth()->user()->is_friends_with($post->user_id))) {
             return back()->withErrors(['message' => 'You do not have permission to delete this post!']);

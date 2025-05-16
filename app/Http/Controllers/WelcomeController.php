@@ -46,7 +46,7 @@ class WelcomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    //calls function for login/registeration//
+    //calls function for login/registration//
     public function show() {
         return Inertia::render('Welcome', [
             'users' => User::count(),

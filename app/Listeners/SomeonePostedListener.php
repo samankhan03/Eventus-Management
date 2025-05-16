@@ -10,7 +10,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 class SomeonePostedListener
 {
     /**
-     * Create the event listener.
+     * Creates the event listener.
      *
      * @return void
      */
@@ -20,7 +20,7 @@ class SomeonePostedListener
     }
 
     /**
-     * Handle the event.
+     * Handles the event.
      *
      * @param  SomeonePostedEvent  $event
      * @return void

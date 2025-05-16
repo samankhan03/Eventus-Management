@@ -18,17 +18,17 @@ class ProfileInformationTest extends TestCase
 
     $response = $this->actingAs($user)
         ->put('/user/profile-information', [
-            'name' => 'Tyrell Simonis',
-            'email' => 'unique_email@example.com',
-            'username' => 'bashirian.toy',
+            'name' => 'Amelia Rhodes',
+            'email' => 'amelia.rhodes@example.com',
+            'username' => 'amelia_rhodes_23',
         ]);
 
     $response->assertSessionHasNoErrors();
 
     $user = $user->fresh();
 
-    $this->assertEquals('Tyrell Simonis', $user->name);
-    $this->assertEquals('unique_email@example.com', $user->email);
-    $this->assertEquals('bashirian.toy', $user->username);
+   $this->assertEquals('Amelia Rhodes', $user->name);
+    $this->assertEquals('amelia.rhodes@example.com', $user->email);
+    $this->assertEquals('amelia_rhodes_23', $user->username);
 }
 }    

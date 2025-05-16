@@ -251,7 +251,7 @@ h1 {
   font-size: 14px;
 }
 
-/* Style for the input field text and background */
+
 .input-field-dark {
   color: white !important;
   background-color: black !important;

@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 class SchoolNetwork extends Migration
 {
     /**
-     * Run the migrations.
+     * Run migrations.
      *
      * @return void
      */
@@ -17,7 +17,7 @@ class SchoolNetwork extends Migration
     }
 
     /**
-     * Reverse the migrations.
+     * Reverse migrations.
      *
      * @return void
      */

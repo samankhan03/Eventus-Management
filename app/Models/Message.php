@@ -12,7 +12,7 @@ class Message extends Model
     protected $fillable = ['body', 'user_id', 'room_id'];
 
     /**
-     * The accessors to append to the model's array form.
+     * The accessors that append to the model's array form.
      *
      * @var array
      */

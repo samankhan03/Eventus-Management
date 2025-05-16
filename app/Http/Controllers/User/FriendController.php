@@ -16,11 +16,11 @@ class FriendController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    //display all your friends and friendsrequests (friendspage)//
+    //displays all user friends and friendrequests //
     public function index() {
         return Inertia::render('User/Friends/Index', [
-            'friends' => auth()->user()->friends(), //list of the current user's friends
-            'requests' => auth()->user()->pending_friend_requests(), //ist of the current user's pending friend requests
+            'friends' => auth()->user()->friends(), //list of the current user friends
+            'requests' => auth()->user()->pending_friend_requests(), //list of current user's pending friend requests
         ]);
     }
 
@@ -41,7 +41,7 @@ class FriendController extends Controller
      * @param  \App\Models\User $user
      * @return \Illuminate\Http\Response
      */
-    //adding friends requests//
+    //add friend//
     public function store(Request $request, User $user) {
         if (!$user) {
             return back()->withErrors(['message' => 'This user could not be found']);
@@ -80,7 +80,7 @@ class FriendController extends Controller
      * @param  \App\Models\User $user
      * @return \Illuminate\Http\Response
      */
-    //accept the friends requests (friendspage)//
+    //accept friends requests //
     public function update(Request $request, User $user) {
         if (!$user) {
             return back()->withErrors(['message' => 'This user could not be found']);
@@ -96,7 +96,7 @@ class FriendController extends Controller
      * @param  \App\Models\User $user
      * @return \Illuminate\Http\Response
      */
-    //removing them as a friend//
+    //delete a friend//
     public function destroy(User $user) {
         if (!$user) {
             return back()->withErrors(['message' => 'This user could not be found']);
@@ -112,7 +112,7 @@ class FriendController extends Controller
      * @param  \App\Models\User $user
      * @return \Illuminate\Http\Response
      */
-    //denying their friends requests//
+    //denying a friend request//
     public function deny(User $user) {
         if (!$user) {
             return back()->withErrors(['message' => 'This user could not be found']);

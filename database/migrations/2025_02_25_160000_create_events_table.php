@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 class CreateEventsTable extends Migration
 {
     /**
-     * Run the migrations.
+     * Run migrations.
      *
      * @return void
      */
@@ -23,7 +23,7 @@ class CreateEventsTable extends Migration
             $table->string('time_end');
             $table->string('venue');
             $table->text('image');
-            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -16,7 +16,7 @@ class RoomFactory extends Factory
     protected $model = Room::class;
 
     /**
-     * Define the model's default state.
+     * Define the model's default position.
      *
      * @return array
      */

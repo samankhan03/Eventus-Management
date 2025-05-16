@@ -27,7 +27,7 @@ window.Echo = new Echo({
     forceTLS: true
 });
 
-// FOR TESTING
+// FOR Testing
 // Pusher.log = function(message) {
 //     window.console.log(message)
 // }

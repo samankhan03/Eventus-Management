@@ -65,7 +65,7 @@ class User extends Authenticatable
     ];
 
     /**
-     * Get the default profile photo URL if no profile photo has been uploaded.
+     * Get the default profile photo URL if no profile photo has- been uploaded.
      *
      * @return string
      */

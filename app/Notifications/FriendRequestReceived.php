@@ -15,7 +15,7 @@ class FriendRequestReceived extends Notification implements ShouldQueue
     public $user;
 
     /**
-     * Create a new notification instance.
+     * Creates a new notification instance.
      *
      * @return void
      */
@@ -24,7 +24,7 @@ class FriendRequestReceived extends Notification implements ShouldQueue
     }
 
     /**
-     * Get the notification's delivery channels.
+     * Gets the notification's delivery channels.
      *
      * @param  mixed  $notifiable
      * @return array
@@ -34,7 +34,7 @@ class FriendRequestReceived extends Notification implements ShouldQueue
     }
 
     /**
-     * Get the mail representation of the notification.
+     * Gets the mail representation of the notification.
      *
      * @param  mixed  $notifiable
      * @return \Illuminate\Notifications\Messages\MailMessage

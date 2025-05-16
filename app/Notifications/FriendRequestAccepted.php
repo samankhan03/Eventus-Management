@@ -24,7 +24,7 @@ class FriendRequestAccepted extends Notification implements ShouldQueue
     }
 
     /**
-     * Get the notification's delivery channels.
+     * Gets the notification's delivery channels.
      *
      * @param  mixed  $notifiable
      * @return array
@@ -34,7 +34,7 @@ class FriendRequestAccepted extends Notification implements ShouldQueue
     }
 
     /**
-     * Get the mail representation of the notification.
+     * Gets the mail representation of the notification.
      *
      * @param  mixed  $notifiable
      * @return \Illuminate\Notifications\Messages\MailMessage
@@ -46,7 +46,7 @@ class FriendRequestAccepted extends Notification implements ShouldQueue
     }
 
     /**
-     * Get the array representation of the notification.
+     * Gets the array representation of the notification.
      *
      * @param  mixed  $notifiable
      * @return array

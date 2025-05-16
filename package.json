@@ -30,6 +30,7 @@
     },
     "dependencies": {
         "epic-spinners": "^2.0.0",
-        "vue3-spinner": "^0.0.17"
+        "vue3-spinner": "^0.0.17",
+        "ziggy-js": "^2.5.2"
     }
 }

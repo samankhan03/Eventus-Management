@@ -15,7 +15,7 @@ class SomeonePosted extends Notification implements ShouldQueue
     public $user;
 
     /**
-     * Create a new notification instance.
+     * Creates a new notification instance.
      *
      * @return void
      */
@@ -34,7 +34,7 @@ class SomeonePosted extends Notification implements ShouldQueue
     }
 
     /**
-     * Get the mail representation of the notification.
+     * Gets the mail representation of the notification.
      *
      * @param  mixed  $notifiable
      * @return \Illuminate\Notifications\Messages\MailMessage
@@ -46,7 +46,7 @@ class SomeonePosted extends Notification implements ShouldQueue
     }
 
     /**
-     * Get the array representation of the notification.
+     * Gets the array representation of the notification.
      *
      * @param  mixed  $notifiable
      * @return array

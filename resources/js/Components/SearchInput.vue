@@ -20,7 +20,7 @@
     },
     methods: {
       search() {
-        // Call the Laravel controller method that handles the search
+        // Calls the Laravel controller method that handles the search
         this.$inertia.get(route('search'), { q: this.searchTerm })
       }
     }

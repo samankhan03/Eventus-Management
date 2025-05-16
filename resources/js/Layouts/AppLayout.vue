@@ -307,7 +307,6 @@ body.swal2-toast-shown .swal2-container.swal2-top-right {
     color: rgb(0, 0, 0);
     font-weight: bold;
     background-color: #d0cbcb;
-    /* Footer background */
     padding: 5px 0;
 }
 </style>

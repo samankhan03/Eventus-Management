@@ -10,7 +10,7 @@ use Illuminate\Queue\InteractsWithQueue;
 class FriendRequestAcceptedListener
 {
     /**
-     * Create the event listener.
+     * Creates the event listener.
      *
      * @return void
      */
@@ -20,7 +20,7 @@ class FriendRequestAcceptedListener
     }
 
     /**
-     * Handle the event.
+     * Handles the event.
      *
      * @param  FriendRequestAcceptedEvent  $event
      * @return void

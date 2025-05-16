@@ -12,14 +12,14 @@ class Comment extends Model
     protected $fillable = ['user_id', 'post_id', 'body', 'event_id'];
 
     /**
-     * The relationships that should always be loaded.
+     * The relationships that must always be loaded.
      *
      * @var array
      */
     protected $with = ['user'];
 
     /**
-     * The accessors to append to the model's array form.
+     * The attributes that should be appended to the model's array form.
      *
      * @var array
      */

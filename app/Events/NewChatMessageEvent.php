@@ -19,7 +19,7 @@ class NewChatMessageEvent implements ShouldBroadcast
     public $user;
 
     /**
-     * Create a new event instance.
+     * Creates a new event instance.
      *
      * @return void
      */

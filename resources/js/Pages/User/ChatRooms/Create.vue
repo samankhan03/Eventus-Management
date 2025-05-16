@@ -77,7 +77,6 @@
 </template>
 
 <script setup>
-    // import InfiniteScroll from '@/Components/InfiniteScroll'
     import PagesLayout from '@/Layouts/PagesLayout'
     import { useForm } from "@inertiajs/inertia-vue3";
 

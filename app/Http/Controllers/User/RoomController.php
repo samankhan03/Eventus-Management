@@ -16,7 +16,7 @@ class RoomController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    //returns all the studyrooms//
+    //returns all studyrooms//
     public function index()
     {
         return Inertia::render('User/ChatRooms/Index', [      //Returning views in resources/pages
@@ -29,7 +29,7 @@ class RoomController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    //creates a studyroom//
+    //creates studyroom//
     public function create()
     {
         return Inertia::render(
@@ -44,7 +44,7 @@ class RoomController extends Controller
      * @param  \App\Models\Room $room
      * @return \Illuminate\Http\Response
      */
-    //after creating the studyroom it will store the studyroom details//
+    //after creating the studyroom, it stores the studyroom details//
     public function store(Request $request, Room $room)
 {
     $request->validate([
@@ -74,7 +74,7 @@ class RoomController extends Controller
         $messages = Message::where('room_id', $room->id)
             ->with('user')
             ->oldest()
-            ->get();          //getting messages from the database
+            ->get();          //obtains messages from the database
         return Inertia::render('User/ChatRooms/Show', [
             'room' => $room,
             'messages' => $messages,
@@ -99,18 +99,18 @@ class RoomController extends Controller
      * @param  \App\Models\Room  $room
      * @return \Illuminate\Http\Response
      */
-    //show the active members in the studyroom
+    //shows the active members in the studyroom
     public function update(Request $request, Room $room)
     {
         $user = auth()->user();
     
-        // Ensure the user is not already in the room before joining
+        // Ensures user is not already in the room before joining
         if (!$user->rooms->contains($room)) {
-            $user->rooms()->attach($room);  // Add user to the room
-            $room->increment('active');  // Increment active member count
+            $user->rooms()->attach($room);  // Adds user to the room
+            $room->increment('active');  // Increments active member count
         }
     
-        // Fetch the messages for the room
+        // Fetches the messages for the room
         $messages = Message::where('room_id', $room->id)
             ->with('user')
             ->oldest()
@@ -124,15 +124,15 @@ class RoomController extends Controller
     
     
 
-    //if you leave the chatroom it will update the active members
+    //if you leave the studyroom it will update the active members
     public function roomLogout(Request $request, Room $room)
     {
         $user = auth()->user();
     
-        // Ensure the user is actually in the room before leaving
+        // Ensures the user is actually in the room before leaving
         if ($user->rooms->contains($room)) {
-            $user->rooms()->detach($room);  // Remove user from the room
-            $room->decrement('active');  // Decrement active member count
+            $user->rooms()->detach($room);  // Removes user from the room
+            $room->decrement('active');  // Decrements active member count
         }
     
         return redirect()->route('chat-rooms.index');
@@ -150,7 +150,7 @@ class RoomController extends Controller
     {
         //
     }
-    //show the room that has been created//
+    //shows the room that has been created//
     public function newroom(Request $request)
     {
         $request->validate([

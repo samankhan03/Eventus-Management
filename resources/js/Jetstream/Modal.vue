@@ -72,9 +72,7 @@
 
             document.addEventListener('keydown', closeOnEscape)
 
-            // this.$once('hook:destroyed', () => {
-            //     document.removeEventListener('keydown', closeOnEscape)
-            // })
+          
         },
 
         computed: {

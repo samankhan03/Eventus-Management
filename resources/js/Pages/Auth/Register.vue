@@ -161,8 +161,8 @@
     font-weight: bold;
     text-decoration: underline;
     font-size: 15px;
-    padding: 5px; /* Add some padding for better visual appearance */
-    border-radius: 5px; /* Optional: Add rounded corners */
+    padding: 5px; 
+    border-radius: 5px; 
     margin-left: 14%;
 }
 
@@ -239,7 +239,7 @@ p {
     margin-top: 10px;
 }
 
-/* Style for the input field text and background */
+
 .input-field-dark {
     color: white !important;
     background-color: black !important;

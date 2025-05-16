@@ -9,7 +9,7 @@ use Laravel\Jetstream\Jetstream;
 class JetstreamServiceProvider extends ServiceProvider
 {
     /**
-     * Register any application services.
+     * Registers any application services.
      *
      * @return void
      */
@@ -19,7 +19,7 @@ class JetstreamServiceProvider extends ServiceProvider
     }
 
     /**
-     * Bootstrap any application services.
+     * Bootstraps any application services.
      *
      * @return void
      */
@@ -31,7 +31,7 @@ class JetstreamServiceProvider extends ServiceProvider
     }
 
     /**
-     * Configure the permissions that are available within the application.
+     * Configures the permissions that are available within the application.
      *
      * @return void
      */

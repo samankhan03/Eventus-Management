@@ -37,7 +37,7 @@ export default {
         return;
       }
 
-      this.error = null; // Clear error
+      this.error = null; //  error
       this.method();     // Call parent method
     },
   },

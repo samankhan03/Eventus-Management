@@ -14,7 +14,7 @@ class MemberController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    //return all members(memberspage)/
+    //returns all members(memberspage)/
     public function index(Request $request, User $user) {
         $members = User::notAuth($user)->paginate(20);
         if ($request->wantsJson()) {
@@ -25,11 +25,11 @@ class MemberController extends Controller
         ]);
     }
 
-    // Perform the search function for members// 
+    // Performs the search function for members// 
     public function search(Request $request) {
         $searchTerm = $request->input('q');
 
-        // Perform search logic here
+        // Perform search logic
         $results = User::where('name', 'like', '%'.$searchTerm.'%')->get();
 
         // Return the search results using the Inertia render method

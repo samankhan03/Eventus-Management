@@ -148,7 +148,7 @@ const form = useForm({
     venue: '',
     image: ''
 });
-//submit function is calling upon route for the event store in the event controller
+//submit function is calling upon route for the event store method in the event controller
 const submit = () => {
     form.post(route("events.store"));
 };

@@ -137,7 +137,6 @@
 </template>
 
 <script setup>
-// import InfiniteScroll from '@/Components/InfiniteScroll'
 import PagesLayout from '@/Layouts/PagesLayout'
 import { useForm } from "@inertiajs/inertia-vue3";
 
@@ -221,7 +220,7 @@ const submitLike = () => {
 .warpper {
     display: flex;
     flex-direction: column;
-    /* align-items: left; */
+
 }
 
 .tab {

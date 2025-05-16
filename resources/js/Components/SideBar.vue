@@ -35,7 +35,7 @@
 export default {
   computed: {
     sideBarLinks() {
-      if (!this.$page.props.user) return []; // Return an empty array if user data is not available
+      if (!this.$page.props.user) return []; // Returns an empty array if user data is not available
       return [
         {
           name: `${this.$page.props.user.username}`,
@@ -58,18 +58,18 @@ export default {
 
 <style>
 aside {
-  height: 100%; /* Sidebar height */
-  margin-top: 0; /* Avoid negative margins */
+  height: 100%; 
+  margin-top: 0; 
   padding-top: 0;
   padding-bottom: 1.5rem;
-  overflow-y: auto; /* Allow scrolling if needed */
-  background-color: black; /* Black background for the entire sidebar */
+  overflow-y: auto; 
+  background-color: black; 
   width: 90%;
   border: 1px solid white;
 }
 
 aside a:hover {
-  background-color: #4a5568; /* Hover background color */
+  background-color: #4a5568; 
 }
 
 aside a.active {
@@ -77,7 +77,7 @@ aside a.active {
 }
 
 aside a + a {
-  border-top: 1px solid white; /* Add a line between links */
+  border-top: 1px solid white; 
 }
 
 *, *::before, *::after {

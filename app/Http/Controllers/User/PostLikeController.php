@@ -80,7 +80,7 @@ class PostLikeController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    //disliking the posts//
+    //disliking posts//
     public function destroy(Post $post) {
         return auth()->user()->dislike($post);
     }

@@ -1,3 +1,4 @@
+//Delete button
 <template>
     <button
         :type="type"

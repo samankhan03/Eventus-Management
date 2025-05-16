@@ -17,7 +17,7 @@ class ProfileFactory extends Factory
     protected $model = Profile::class;
 
     /**
-     * Define the model's default state.
+     * Define the model's default position.
      *
      * @return array
      */
